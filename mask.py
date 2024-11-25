@@ -8,7 +8,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "http://dsndhistestenv.org.ng:7474"}})
 
 GROQ_API_KEY = os.getenv('GROQ_API_KEY')
 # This is where your cached data will be stored
