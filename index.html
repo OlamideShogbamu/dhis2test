@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="mainjest.json" />
+  <link rel="icon" href="icons/favicon-32x32.png" />
+  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+
+</head>
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <h1>Chat with DHIS2 data</h1>
+    </header>
+    <div id="chat-window" class="chat-window"></div>
+    <div class="chat-input">
+      <input id="user-input" type="text" placeholder="Type your message..." />
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+  <script src="scripts.js"></script>
+  <!-- Register the app's service worker. -->
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+  }
+</script>
+
+</body>
+</html>

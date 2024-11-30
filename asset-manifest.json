@@ -1,0 +1,7 @@
+{
+    "files": {
+      "styles.css": "./styles.css",
+      "scripts.js": "./scripts.js",
+      "index.html": "./index.html"
+    }
+}

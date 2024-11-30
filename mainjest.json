@@ -1,0 +1,16 @@
+{
+    "name": "DHIS2-Chatbot",
+    "description": "A modern chatbot application",
+    "version": "1.0.1",
+    "launch_path": "index.html",
+    "icons": {
+        "48": "favicon.ico"
+    },
+    "developer": {
+        "name": "Data Science Nigeria",
+        "email": "product@datasciencenigeria.ai",
+        "url": "https://datasciencenigeria.org"
+    },
+    "start_url": ".",
+    "display": "minimal-ui"
+}

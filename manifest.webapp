@@ -1,0 +1,24 @@
+{
+    "name": "DHIS2-Chatbot",
+    "description": "A modern chatbot application",
+    "version": "1.0.1",
+    "launch_path": "index.html",
+    "icons": {
+        "128": "icons/android-chrome-192x192.png"
+    },
+    "developer": {
+        "name": "Your Name",
+        "email": "your.email@example.com",
+        "url": "https://yourwebsite.com"
+    },
+    "default_locale": "en",
+    "activities": {
+        "dhis": {
+            "href": ".."
+        }
+    },
+    "dhis2": {
+        "apiVersion": "28"
+    },
+    "appType": "APP"
+}
