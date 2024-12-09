@@ -8,7 +8,8 @@ load_dotenv()
 
 app = Flask(__name__)
 
-CORS(app, resources={r"/*": {"origins": ["http://dsndhistestenv.org.ng:7474", "http://localhost:3000"]}})
+CORS(app, 
+     resources={r"/*": {"origins": ["http://dsndhistestenv.org.ng:7474", "http://localhost:8080"]}})
 
 GROQ_API_KEY = os.getenv('GROQ_API_KEY')
 # This is where your cached data will be stored
@@ -35,8 +36,12 @@ def handle_query():
     # Here we query the LLaMA model with the provided query and cached data
     try:
         # Create the prompt dynamically using the cached data and user query
-        prompt = f"Given the following data: {cached_data}, answer this question: {query}"
-
+        prompt = (
+            f"You are provided with tabular data: {cached_data}. "
+            f"Clean the data and represent it as a pivot table for better readability. "
+            f"Using this pivot table, answer the following query: {query}. "
+            "If the query is unrelated, respond responsibly as a helpful assistant."
+        )
         # Use Groq LLaMA model to generate a response
         completion = client.chat.completions.create(
             model="llama3-8b-8192",
