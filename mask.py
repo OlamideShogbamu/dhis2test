@@ -37,11 +37,13 @@ def handle_query():
     try:
         # Create the prompt dynamically using the cached data and user query
         prompt = (
-            f"You are provided with tabular data: {cached_data}. "
-            f"Clean the data and represent it as a pivot table for better readability. "
-            f"Using this pivot table, answer the following query: {query}. "
-            "If the query is unrelated, respond responsibly as a helpful assistant."
-        )
+              f"You are provided with tabular data: {cached_data}. "
+              f"Clean the data and represent it as a pivot table for better readability. "
+              f"Using this pivot table, answer the following query: {query}. "
+              "Do not include the process or steps taken in your answer; only provide the final answer in context. "
+              "If the query is unrelated, respond responsibly as a helpful assistant."
+          )
+
         # Use Groq LLaMA model to generate a response
         completion = client.chat.completions.create(
             model="llama3-8b-8192",
